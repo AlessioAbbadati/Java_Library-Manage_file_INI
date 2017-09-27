@@ -1,17 +1,18 @@
-import Manage_File_INI.Config;
+import Manage_File_INI.Section;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
 /**
  *
- * @author Abbadati Alessio & Dinaro Salvatore
+ * @author Abbadaati Alessio & Dinaro Salvatore
  */
-public class Test_Config {
+public class TestSection {
     
-    public Test_Config() {
+    public TestSection() {
     }
     
     @BeforeClass
@@ -35,34 +36,13 @@ public class Test_Config {
     //
     // @Test
     // public void hello() {}
-    
-    /*
-    *
-    *
-    */
     @Test
-    public void testAddSection(){
-        Config c=new Config();
-        c.addSection("Section1");
-        assertEquals(true,c.ExistSection("Section1"));
-        c.addSection("Section2");
-        assertEquals(true,c.ExistSection("Section2"));
+    public void testAddRemoveParam(){
+        Section s=new Section("Section1");
+        s.addParam("Param1", "25");
+        assertEquals("25", s.getParam("Param1"));
+        s.removeParam("Param1");
+        assertEquals(null, s.getParam("Param1"));
     }
     
-    @Test
-    public void testRemoveSection(){
-        Config c=new Config();
-        c.addSection("Section1");
-        assertEquals(true,c.ExistSection("Section1"));
-        c.removeSection("Section1");
-        assertEquals(false,c.ExistSection("Section1"));
-    }
-    @Test
-    public void testAddParam(){
-        Config c=new Config();
-        c.addSection("Section1");
-        assertEquals(true,c.ExistSection("Section1"));
-        c.addParam("Section1", "Param1", "25");
-        assertEquals("25",c.getParam("Section1", "Param1"));
-    }
 }
