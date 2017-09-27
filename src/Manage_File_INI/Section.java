@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author 70657788
+ * @author Abbadati Alessio & Dinaro Salvatore
  */
 
 public class Section {
