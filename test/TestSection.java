@@ -1,23 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-import Manage_File_INI.Section;
+import Manage_File_INI.Config;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 /**
  *
- * @author salva
+ * @author Abbadati Alessio & Dinaro Salvatore
  */
-public class TestSection {
+public class Test_Config {
     
-    public TestSection() {
+    public Test_Config() {
     }
     
     @BeforeClass
@@ -41,14 +35,34 @@ public class TestSection {
     //
     // @Test
     // public void hello() {}
+    
+    /*
+    *
+    *
+    */
     @Test
-    public void testAddParam(){
-        Section s=new Section("Section1");
-        s.addParam("Param1", "25");
-        assertEquals("25", s.getParam("Param1"));
-        s.removeParam("Param1");
-        assertEquals(null, s.getParam("Param1"));
+    public void testAddSection(){
+        Config c=new Config();
+        c.addSection("Section1");
+        assertEquals(true,c.ExistSection("Section1"));
+        c.addSection("Section2");
+        assertEquals(true,c.ExistSection("Section2"));
     }
     
-    
+    @Test
+    public void testRemoveSection(){
+        Config c=new Config();
+        c.addSection("Section1");
+        assertEquals(true,c.ExistSection("Section1"));
+        c.removeSection("Section1");
+        assertEquals(false,c.ExistSection("Section1"));
+    }
+    @Test
+    public void testAddParam(){
+        Config c=new Config();
+        c.addSection("Section1");
+        assertEquals(true,c.ExistSection("Section1"));
+        c.addParam("Section1", "Param1", "25");
+        assertEquals("25",c.getParam("Section1", "Param1"));
+    }
 }
