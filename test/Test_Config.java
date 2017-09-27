@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import Manage_File_INI.Config;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 /**
  *
- * @author 70657788
+ * @author Abbadati Alessio & Dinaro Salvatore
  */
 public class Test_Config {
     
@@ -41,6 +35,11 @@ public class Test_Config {
     //
     // @Test
     // public void hello() {}
+    
+    /*
+    *
+    *
+    */
     @Test
     public void testAddSection(){
         Config c=new Config();
