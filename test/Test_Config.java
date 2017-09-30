@@ -63,7 +63,7 @@ public class Test_Config {
         
         try {
             c.addSection("Section2");
-        } catch (SectionAlreadyExistException ex) {exception3=true}
+        } catch (SectionAlreadyExistException ex) {exception3=true;}
         assertEquals(true,c.ExistSection("Section2"));
         assertFalse(exception3);
     }
