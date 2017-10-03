@@ -2,6 +2,7 @@ package Manage_File_INI;
 
 import java.util.ArrayList;
 import java.util.List;
+import Manage_File_INI.SectionAlreadyExistException;
 
 /**
  *
@@ -17,6 +18,11 @@ public class Config {
     
     public void addSection(String name){
         Section s=new Section(name);
+        for(int i=0; i<Sections.size(); i++){
+            if(Sections.get(i).getName()==name){
+                throw new SectionAlreadyExistException(name);
+            }
+        }
         Sections.add(s);
     }
     
@@ -53,6 +59,7 @@ public class Config {
                 break;
             }
         }
+        if(i==Sections.size()) throw new SectionNotExistException(section_name);
     }
     
     public String getParam(String section_name, String name){
@@ -61,6 +68,7 @@ public class Config {
                 return Sections.get(i).getParam(name);
             }
         }
+        if(i==Sections.size()) throw new SectionNotExistException(section_name);
         return null;
     }
 }
