@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Manage_File_INI;
 
 /**
  *
- * @author 70657788
+ * @author Dinaro
  */
-class SectionAlreadyExistException extends Exception{
-    
+public class SectionAlreadyExistException extends Exception{
+    public SectionAlreadyExistException(String name){
+        super("La sezione '"+name+"' è gia esistente.");
+    }
 }
