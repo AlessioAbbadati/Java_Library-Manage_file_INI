@@ -7,7 +7,7 @@ package Manage_File_INI;
 
 /**
  *
- * @author salva
+ * @author Abbadati Alessio, Dinaro Salvatore & Multani Prabhdeep
  */
 public class SectionNotExistException extends Exception{
     public SectionNotExistException(String name){

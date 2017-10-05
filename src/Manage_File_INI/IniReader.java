@@ -7,10 +7,8 @@ package Manage_File_INI;
 
 /**
  *
- * @author Abbadati Alessio, Dinaro Salvatore & Multani Prabhdeep
+ * @author salva
  */
-public class ParamNotExistException extends Exception{
-    public ParamNotExistException(String name){
-        super("Il parametro '"+name+"' non esiste.");
-    }
+public class IniReader {
+    
 }

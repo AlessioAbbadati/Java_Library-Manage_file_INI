@@ -1,16 +1,16 @@
 package Manage_File_INI;
 
+import Manage_File_INI.SectionAlreadyExistException;
 import java.util.ArrayList;
 import java.util.List;
-import Manage_File_INI.SectionAlreadyExistException;
 
 /**
  *
- * @author Abbadati Alessio & Dinaro Salvatore
+ * @author Abbadati Alessio, Dinaro Salvatore & Multani Prabhdeep
  */
 public class Config {
     
-    private List<Section> Sections;
+    protected List<Section> Sections;
     
     public Config(){
         Sections=new ArrayList<Section>();

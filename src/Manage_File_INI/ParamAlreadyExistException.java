@@ -7,7 +7,7 @@ package Manage_File_INI;
 
 /**
  *
- * @author salva
+ * @author Abbadati Alessio, Dinaro Salvatore & Multani Prabhdeep
  */
 public class ParamAlreadyExistException extends Exception{
     public ParamAlreadyExistException(String name){

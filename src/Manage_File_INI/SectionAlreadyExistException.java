@@ -3,7 +3,7 @@ package Manage_File_INI;
 
 /**
  *
- * @author Dinaro
+ * @author Abbadati Alessio, Dinaro Salvatore & Multani Prabhdeep
  */
 public class SectionAlreadyExistException extends Exception{
     public SectionAlreadyExistException(String name){

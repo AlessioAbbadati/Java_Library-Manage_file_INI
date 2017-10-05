@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/N:/5CI/Dinaro%20Salvatore/TPI/Librerie/Java_Library-Manage_file_INI/test/Test_Config.java</file>
-            <file>file:/N:/5CI/Dinaro%20Salvatore/TPI/Librerie/Java_Library-Manage_file_INI/src/Manage_File_INI/Section.java</file>
-            <file>file:/N:/5CI/Dinaro%20Salvatore/TPI/Librerie/Java_Library-Manage_file_INI/src/Manage_File_INI/Config.java</file>
-            <file>file:/N:/5CI/Dinaro%20Salvatore/TPI/Librerie/Java_Library-Manage_file_INI/src/Manage_File_INI/SectionAlreadyExistException.java</file>
+            <file>file:/F:/Scuola/5CI/TPI/Librerie/Java_Library-Manage_file_INI/test/Test_Config.java</file>
+            <file>file:/F:/Scuola/5CI/TPI/Librerie/Java_Library-Manage_file_INI/src/Manage_File_INI/Config.java</file>
+            <file>file:/F:/Scuola/5CI/TPI/Librerie/Java_Library-Manage_file_INI/src/Manage_File_INI/Section.java</file>
+            <file>file:/F:/Scuola/5CI/TPI/Librerie/Java_Library-Manage_file_INI/test/TestSection.java</file>
+            <file>file:/F:/Scuola/5CI/TPI/Librerie/Java_Library-Manage_file_INI/src/Manage_File_INI/ParamAlreadyExistException.java</file>
         </group>
     </open-files>
 </project-private>

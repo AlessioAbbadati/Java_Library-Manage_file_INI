@@ -1,3 +1,4 @@
+import Manage_File_INI.ParamAlreadyExistException;
 import Manage_File_INI.Section;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -37,12 +38,16 @@ public class TestSection {
     // @Test
     // public void hello() {}
     @Test
-    public void testAddRemoveParam(){
+    public void testAddRemoveParam() throws ParamAlreadyExistException{
         Section s=new Section("Section1");
         s.addParam("Param1", "25");
         assertEquals("25", s.getParam("Param1"));
+        s.addParam("Param2", "30");
+        assertEquals("30", s.getParam("Param2"));
         s.removeParam("Param1");
         assertEquals(null, s.getParam("Param1"));
+        
     }
+    
     
 }

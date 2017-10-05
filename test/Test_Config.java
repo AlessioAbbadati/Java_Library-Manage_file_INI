@@ -1,5 +1,7 @@
 import Manage_File_INI.Config;
+import Manage_File_INI.ParamAlreadyExistException;
 import Manage_File_INI.SectionAlreadyExistException;
+import Manage_File_INI.SectionNotExistException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -10,7 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 /**
  *
- * @author Abbadati Alessio & Dinaro Salvatore
+ * @author Abbadati Alessio, Dinaro Salvatore & Multani Prabhdeep
  */
 public class Test_Config {
     
@@ -59,13 +61,14 @@ public class Test_Config {
         try {
             c.addSection("Section1");
         } catch (SectionAlreadyExistException ex) {exception2=true;}
-        assertFalse(exception2);
+        assertTrue(exception2);
         
         try {
             c.addSection("Section2");
         } catch (SectionAlreadyExistException ex) {exception3=true;}
         assertEquals(true,c.ExistSection("Section2"));
         assertFalse(exception3);
+        
     }
     
     @Test
@@ -75,13 +78,19 @@ public class Test_Config {
         assertEquals(true,c.ExistSection("Section1"));
         c.removeSection("Section1");
         assertEquals(false,c.ExistSection("Section1"));
+        c.removeSection("Section1");
+        assertEquals(false, c.ExistSection("Section1"));
     }
     @Test
-    public void testAddParam() throws SectionAlreadyExistException{
+    public void testAddParam() throws SectionAlreadyExistException, SectionNotExistException, ParamAlreadyExistException{
         Config c=new Config();
+        boolean exception=false;
+        
         c.addSection("Section1");
         assertEquals(true,c.ExistSection("Section1"));
         c.addParam("Section1", "Param1", "25");
         assertEquals("25",c.getParam("Section1", "Param1"));
+        c.addParam("Section1", "Param2", "200");
+        assertEquals("25",c.getParam("Section1", "Param2"));
     }
 }
