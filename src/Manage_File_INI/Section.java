@@ -24,7 +24,7 @@ public class Section {
         return name;
     }
     
-    public void addParam(String name, String value){
+    public void addParam(String name, String value) throws ParamAlreadyExistException{
         for(int i=0; i<parameter.size(); i++){
             String param=parameter.get(i);
             for(int j=0; j<param.length(); j++){
