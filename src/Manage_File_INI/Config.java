@@ -16,7 +16,7 @@ public class Config {
         Sections=new ArrayList<Section>();
     }
     
-    public void addSection(String name){
+    public void addSection(String name) throws SectionAlreadyExistException{
         Section s=new Section(name);
         for(int i=0; i<Sections.size(); i++){
             if(Sections.get(i).getName()==name){
@@ -44,16 +44,20 @@ public class Config {
         return false;
     }
     
-    public void addParam(String section_name, String name, String value){
-        for(int i=0; i<Sections.size(); i++){
+    public void addParam(String section_name, String name, String value) throws SectionNotExistException, ParamAlreadyExistException{
+        int i;
+        for(i=0; i<Sections.size(); i++){
             if(Sections.get(i).getName()==section_name){
                 Sections.get(i).addParam(name, value);
+                break;
             }
         }
+        if(i==Sections.size()) throw new SectionNotExistException(section_name);
     }
     
-    public void removeParam(String section_name, String name){
-        for(int i=0; i<Sections.size(); i++){
+    public void removeParam(String section_name, String name) throws SectionNotExistException{
+        int i;
+        for(i=0; i<Sections.size(); i++){
             if(Sections.get(i).getName()==section_name){
                 Sections.get(i).removeParam(name);
                 break;
@@ -62,8 +66,9 @@ public class Config {
         if(i==Sections.size()) throw new SectionNotExistException(section_name);
     }
     
-    public String getParam(String section_name, String name){
-        for(int i=0; i<Sections.size(); i++){
+    public String getParam(String section_name, String name) throws SectionNotExistException{
+        int i;
+        for(i=0; i<Sections.size(); i++){
             if(Sections.get(i).getName()==section_name){
                 return Sections.get(i).getParam(name);
             }
